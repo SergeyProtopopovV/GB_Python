@@ -6,3 +6,20 @@
 
 # Для решения данной задачи используйте функцию .split()
 
+input_string = 'a a a b c a a d c d d'
+
+separated_string = input_string.split()
+
+chars_dict = {}
+output_string = ''
+for char in separated_string:
+    if char in chars_dict:
+        chars_dict[char] += 1
+    else:
+        chars_dict[char] = 1
+    if chars_dict[char] > 1:
+        output_string += f'{char}_{chars_dict[char] - 1} '
+    else:
+        output_string += f'{char} '
+
+print(output_string)
