@@ -6,18 +6,18 @@
 
 # Ваня:
 n = int(input())
-max_number = 1000
+max_number = 1000  # надо присвоить n
 while n != 0:
     n = int(input())
-    if max_number > n:
+    if max_number > n:  # вместо больше знак меньше
         max_number = n
 print(max_number)
 
 # Петя:
 n = int(input())
-max_number = -1
-while n < 0:
+max_number = -1  # надо присвоить n
+while n < 0: # нужна проверка не равно нулю
     n = int(input())
     if max_number < n:
-        n = max_number
-print(n)
+        n = max_number  # поменять местами - max_number = n
+print(n)  # на принт выводим max_number
