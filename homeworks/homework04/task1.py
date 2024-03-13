@@ -15,5 +15,7 @@ var1 = '5 4'
 var2 = '1 3 5 7 9'
 var3 = '2 3 4 5'
 
-change = [int(i) for i in (set(var3.split()) & set(var2.split()))]
-print(change)
+# change = [int(i) for i in (set(var3.split()) & set(var2.split()))]
+# print(change)
+
+print(" ".join(sorted(set(var3.split()) & set(var2.split()))))
