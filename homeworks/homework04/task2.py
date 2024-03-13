@@ -20,3 +20,6 @@ for i in range(-2, len(arr) - 2):
     if summ > max_berries:
         max_berries = summ
 print(max_berries)
+
+print(max([(arr[i] + arr[i + 1] + arr[i + 2]) for i in range(-2, len(arr) - 2)]))
+
