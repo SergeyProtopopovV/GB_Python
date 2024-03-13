@@ -14,6 +14,7 @@
 # На выходе:
 # 19
 
+arr = [5, 8, 6, 4, 9, 2, 7, 3]
 max_berries = arr[0]
 for i in range(-2, len(arr) - 2):
     summ = arr[i] + arr[i + 1] + arr[i + 2]
@@ -22,4 +23,3 @@ for i in range(-2, len(arr) - 2):
 print(max_berries)
 
 print(max([(arr[i] + arr[i + 1] + arr[i + 2]) for i in range(-2, len(arr) - 2)]))
-
