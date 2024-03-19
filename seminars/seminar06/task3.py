@@ -5,3 +5,20 @@
 # 1 2 3 2 3
 # Вывод:
 # 2
+
+list_1 = [1, 2, 3, 2, 3]
+
+
+# def pare_searching(input_list):
+#     list_1 = [1, 2, 3, 2, 3]
+
+def champ(arr):
+    count = 0
+    for i in range(len(list_1)):
+        for j in range(i + 1, len(list_1)):
+            if list_1[j] == list_1[i]:
+                count += 1
+    return count
+
+
+print(champ(list_1))

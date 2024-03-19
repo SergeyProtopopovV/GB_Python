@@ -16,6 +16,42 @@ second_array = '4 15 43 1 15 1'
 first_array = first_array.split()
 second_array = second_array.split()
 
-for i in first_array:
-    if i not in second_array:
-        print(i, end=" ")
+
+def print_intersection(first_array, second_array):
+    for i in first_array:
+        if i not in second_array:
+            print(i, end=" ")
+
+
+print_intersection(first_array, second_array)
+
+# def add_in_the_end(array1: list[int], array2: list[int]) -> list[int]:
+#     result = []
+#     for i in array1:
+#         if i not in array2:
+#             result.append(i)
+#     return result
+#
+#
+# array1 = [1, 2, 3, 4, 5]
+# array2 = [6, 2, 8, 5, 0]
+# print(add_in_the_end(array1, array2))
+
+
+def zamena(array1: list[int], array2: list[int]) -> list[int]:
+    set_list = set(array2)
+    return [num for num in array1 if num not in set_list]
+
+
+array1 = [1, 2, 3, 4, 5]
+array2 = [6, 2, 8, 5, 0]
+print(zamena(array1, array2))
+
+
+# def para(array: list[int]) -> int:
+#     return len(array) - len(set(array))
+#
+#
+# list_1 = [2, 2, 2]
+# print(sum([list_1.count(i)//2 for i in set(list_1)]))
+

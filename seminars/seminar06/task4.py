@@ -10,3 +10,31 @@
 # 220 284
 
 
+def del_sum(num: int) -> int:
+    count = 1
+    for i in range(2, int(num**0.5)):
+        if num % i == 0:
+            count += (i + num//i)
+    return count
+
+
+# def del_sum(num: int) -> int:
+#     count = 0
+#     for i in range(1, num // 2 + 1):
+#         if num % i == 0:
+#             count += i
+#     return count
+
+
+def friendly_num(k: int) -> dict:
+    dict_num = {}
+    for i in range(220, k):
+        del_num = del_sum(i)
+        if i == del_num or (i in dict_num or del_num in dict_num):
+            continue
+        if del_sum(del_num) == i:
+            dict_num.update({i: del_num})
+    return dict_num
+
+
+print(friendly_num(100000))

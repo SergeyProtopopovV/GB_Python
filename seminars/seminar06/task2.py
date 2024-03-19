@@ -17,8 +17,13 @@ input_array = '1 5 1 5 1'
 
 input_array = input_array.split()
 
-count = 0
-for i in range(1, len(input_array) - 1):
-    if input_array[i - 1] < input_array[i] and input_array[i + 1] < input_array[i]:
-        count += 1
-print(count)
+
+def greater_near(array):
+    count = 0
+    for i in range(1, len(array) - 1):
+        if array[i - 1] < array[i] and array[i + 1] < array[i]:
+            count += 1
+    print(count)
+
+
+greater_near(input_array)
