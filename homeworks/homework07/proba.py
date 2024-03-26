@@ -1,5 +1,6 @@
-VOWELS = 'аеёиоуэюяы'
 stroka = 'ПАра-ра-рам рам-пам-папАМ па-ра-пИ-дам'
+VOWELS = 'аеёиоуэюяы'
+
 
 stroka_vowels = "".join([char for char in stroka.lower() if char in VOWELS or char == ' '])
 if len(stroka_vowels) <= 1:
