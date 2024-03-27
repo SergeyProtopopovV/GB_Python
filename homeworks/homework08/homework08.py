@@ -40,11 +40,18 @@ def transfer_data(source: str, dest: str, num_row: int):
     dest: str - имя файла куда переносим
     num_row: int - номер переносимой строки
     """
-    pass
+    with open(source, "r", encoding="utf-8") as file_1:
+        for i, line in enumerate(file_1):
+            if i == num_row:
+                with open(dest, "a", encoding="utf-8") as file_2:
+                    file_2.write(line)
+                    print(f'Строка {num_row} перенесена в файл {dest}')
+                    return
+        print(f'Строка {num_row} не найдена')
 
 
 INFO_STRING = """
-Выберите ркжим работы:
+Выберите режим работы:
 1 - вывести все данные
 2 - добавление нового пользователя
 3 - поиск
@@ -54,7 +61,7 @@ INFO_STRING = """
 file = "Text.txt"
 
 if file not in os.listdir():
-    print("указанное имя файла отсутсвует")
+    print("указанное имя файла отсутствует")
     sys.exit()
 
 
@@ -71,4 +78,6 @@ while True:
         print(search_user(file, data))
     elif mode == 4:
         # Тут нужно вызвать функцию с аргументами
-        pass
+        num_row = int(input("Введите номер строки для переноса: "))
+        new_file = input("Введите имя файла для переноса (нумерация строк с нуля): ")
+        transfer_data(file, new_file, num_row)
